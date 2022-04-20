@@ -1,29 +1,19 @@
 
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { BlackJack } from './blackJack';
-
+import { PuzzleGame } from './blackJack/puzzle';
+import{Home} from'./home'
 function App() {
   return (
     <div>
-    <div className="App">
-      <div className="playingCards">
-    <div className="card back"></div>
-    <div className="card rank-7 spades">
-    <span className="rank">7</span>
-    <span className="suit">&spades;</span>
-</div>
-    
-<div>
-<strong>
-    <span className="card rank-a clubs">
-        <span className="rank">A</span>
-        <span className="suit">&clubs;</span>
-    </span>
-</strong>
-</div>
-    </div>
-    </div>
-      <BlackJack></BlackJack>
+   
+     <Routes>
+        <Route path="blackJack" element={<BlackJack/>} />
+        <Route path="puzzle-game" element={<PuzzleGame />} /> 
+        <Route path="/" element={<Home/>} />
+
+      </Routes>
     </div>
   );
 }
